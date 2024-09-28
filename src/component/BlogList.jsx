@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import Blog from './Blog.jsx';
 import axios from 'axios';
-import {DeleteIcon, PencilAltIcon} from '@mui/icons-material/Delete';
+import {DeleteIcon, EditIcon } from '@mui/icons-material/Delete';
 
 const BlogList = () => {
     const [blogs, setBlogs] = useState([]);
@@ -29,7 +29,6 @@ const BlogList = () => {
             console.error("Error deleting blog:", error);
         }
     };
-
     const handleEdit = (id) => {
         navigate(`/update/${id}`);
       };
@@ -61,7 +60,7 @@ const BlogList = () => {
                             onClick={() => handleEdit(id)}
                             className='flex items-center text-md text-blue-500 hover:bg-blue-600 hover:text-white rounded-md px-3 py-1 transition duration-300'
                         >
-                            <PencilAltIcon className="w-5 h-5 mr-2" />
+                            <EditIcon  className="w-5 h-5 mr-2" />
                             Edit
                         </button>
 
