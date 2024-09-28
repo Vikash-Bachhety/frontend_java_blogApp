@@ -23,7 +23,7 @@ function AddNewBlog() {
   // Handle the update action
   const handleSubmit = async () => {
     try {
-      await axios.post(`backend_java_blogapp.railway.internal/blogs/addBlog`, form);
+      await axios.post(`https://backend_java_blogapp.railway.internal/blogs/addBlog`, form);
       navigate("/"); 
     } catch (error) {
       console.error("Error updating blog:", error);
