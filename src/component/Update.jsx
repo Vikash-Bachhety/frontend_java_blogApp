@@ -16,7 +16,7 @@ function Update() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await axios.get(`https://backend_java_blogapp.railway.internal/blogs/${id}`);
+        const response = await axios.get(`https://backendjavablogapp-production.up.railway.app/blogs/${id}`);
         setForm(response.data); 
       } catch (error) {
         console.error('Error fetching blog data:', error);
@@ -38,7 +38,7 @@ function Update() {
   // Handle the update action
   const handleUpdate = async () => {
     try {
-      await axios.put(`https://backend_java_blogapp.railway.internal/blogs/updateBlog/${id}`, form);
+      await axios.put(`https://backendjavablogapp-production.up.railway.app/blogs/updateBlog/${id}`, form);
       navigate("/"); 
     } catch (error) {
       console.error("Error updating blog:", error);
