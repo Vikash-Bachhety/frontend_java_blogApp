@@ -30,7 +30,7 @@ function AddNewBlog() {
   };
 
   return (
-    <div className='flex justify-center items-center w-full h-screen bg-gray-50'>
+    <div className='flex justify-center items-center w-full h-screen bg-slate-900 px-4'>
       <form className='max-w-xl w-full flex flex-col gap-4 border p-6 bg-white shadow-md rounded-md'>
         <h2 className='text-2xl font-semibold mb-4 text-center font-bold text-green-500'>Create Blog</h2>
 
