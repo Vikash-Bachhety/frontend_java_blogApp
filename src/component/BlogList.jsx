@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// import Blog from './Blog.jsx';
 import axios from 'axios';
-import {DeleteIcon, EditIcon } from '@mui/icons-material/Delete';
+import {DeleteIcon } from '@mui/icons-material/Delete';
+import { EditIcon } from '@mui/icons-material/EditIcon';
 
 const BlogList = () => {
     const [blogs, setBlogs] = useState([]);
