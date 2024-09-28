@@ -45,7 +45,7 @@ const BlogList = () => {
           views={blog.views}
           imageurl={blog.imageUrl}
           handleDelete={handleDelete}
-          handleEdit={handleEdit}  {/* Pass handleEdit to each Blog */}
+          handleEdit={handleEdit}
         />
       ))}
     </div>

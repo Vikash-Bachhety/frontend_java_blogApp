@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { PencilAltIcon, TrashIcon } from '@heroicons/react/solid';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const Blog = ({ id, title, description, views, imageurl, handleDelete }) => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Blog = ({ id, title, description, views, imageurl, handleDelete }) => {
           onClick={handleEdit} 
           className='flex items-center text-md text-blue-500 hover:bg-blue-600 hover:text-white rounded-md px-3 py-1 transition duration-300'
         >
-          <PencilAltIcon className="w-5 h-5 mr-2" />
+          <EditIcon className="w-5 h-5 mr-2" />
           Edit
         </button>
 
@@ -31,7 +32,7 @@ const Blog = ({ id, title, description, views, imageurl, handleDelete }) => {
           onClick={() => handleDelete(id)} 
           className='flex items-center text-md text-rose-500 hover:bg-rose-600 hover:text-white rounded-md px-3 py-1 transition duration-300'
         >
-          <TrashIcon className="w-5 h-5 mr-2" />
+          <DeleteIcon className="w-5 h-5 mr-2" />
           Delete
         </button>
       </div>
