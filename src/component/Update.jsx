@@ -14,6 +14,7 @@ function Update() {
 
   useEffect(() => {
     const fetchBlog = async () => {
+      if (!id) return;  // Add this check to prevent API call if id is not present
       try {
         const response = await axios.get(`https://backendjavablogapp-production.up.railway.app/blogs/${id}`);
         setForm(response.data); 
@@ -25,7 +26,6 @@ function Update() {
     fetchBlog();
   }, [id]);
 
-  // Handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setForm({
@@ -34,7 +34,6 @@ function Update() {
     });
   };
 
-  // Handle the update action
   const handleUpdate = async () => {
     try {
       await axios.put(`https://backendjavablogapp-production.up.railway.app/blogs/updateBlog/${id}`, form);
@@ -46,64 +45,47 @@ function Update() {
 
   return (
     <div className='flex justify-center items-center w-full h-screen bg-slate-900 px-4'>
-      <form className='max-w-xl w-full flex flex-col gap-6 border p-8 bg-white shadow-lg rounded-md'>
-        <h2 className='text-3xl font-bold text-center text-blue-500 mb-6'>Update Blog</h2>
+      <form className='max-w-xl w-full flex flex-col gap-4 border p-6 bg-white shadow-md rounded-md'>
+        <h2 className='text-2xl font-semibold mb-4 text-center font-bold text-blue-500'>Update Blog</h2>
 
-        {/* Title input */}
-        <div className='flex flex-col'>
-          <label htmlFor="title" className='text-gray-700 font-medium mb-1'>Title</label>
-          <input
-            type="text"
-            name="title"
-            value={form.title}
-            onChange={handleInputChange}
-            className='border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300'
-            placeholder="Enter blog title"
-          />
-        </div>
+        <label htmlFor="title" className='text-gray-700 font-medium'>Title</label>
+        <input
+          type="text"
+          name="title"
+          value={form.title}
+          onChange={handleInputChange}
+          className='border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500'
+          placeholder="Enter blog title"
+        />
 
-        {/* Description input */}
-        <div className='flex flex-col'>
-          <label htmlFor="description" className='text-gray-700 font-medium mb-1'>Description</label>
-          <input
-            type="text"
-            name="description"
-            value={form.description}
-            onChange={handleInputChange}
-            className='border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300'
-            placeholder="Enter blog description"
-          />
-        </div>
+        <label htmlFor="description" className='text-gray-700 font-medium'>Description</label>
+        <input
+          type="text"
+          name="description"
+          value={form.description}
+          onChange={handleInputChange}
+          className='border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500'
+          placeholder="Enter blog description"
+        />
 
-        {/* Views input */}
-        <div className='flex flex-col'>
-          <label htmlFor="views" className='text-gray-700 font-medium mb-1'>Views</label>
-          <input
-            type="number"
-            name="views"
-            value={form.views}
-            onChange={handleInputChange}
-            className='border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300'
-            placeholder="Enter views"
-          />
-        </div>
+        <label htmlFor="views" className='text-gray-700 font-medium'>Views</label>
+        <input
+          type="number"
+          name="views"
+          value={form.views}
+          onChange={handleInputChange}
+          className='border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500'
+          placeholder="Enter views"
+        />
 
-        {/* Update button */}
         <button
           type="button"
-          className='mt-4 bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 transition duration-300 font-semibold shadow-lg'
+          className='mt-4 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300'
           onClick={handleUpdate}
         >
-          Update Blog
+          Update
         </button>
-
-        {/* Back Link */}
-        <Link
-          to="/"
-          className='block text-center text-blue-500 hover:text-blue-600 font-medium mt-4 transition-colors duration-300'
-        >
-          Back to Home
-        </Link>
+        <Link className='font-semibold text-slate-500 mx-auto' to={"/"}>Back</Link>
       </form>
     </div>
   );
