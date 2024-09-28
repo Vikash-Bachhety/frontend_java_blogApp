@@ -8,7 +8,7 @@ const BlogList = () => {
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                const response = await axios.get("https://backend_java_blogapp.railway.internal/blogs/");
+                const response = await axios.get("https://backend_java_blogapp.railway.internal/blogs");
                 const data = response.data;
                 console.log(data);
                 setBlogs(data);
@@ -23,7 +23,7 @@ const BlogList = () => {
     const handleDelete = async (id) => {
         try {
             // confirm("Are you sure to want to delete ?")
-            await axios.delete(`backend_java_blogapp.railway.internal/blogs/deleteBlog/${id}`);
+            await axios.delete(`https://backend_java_blogapp.railway.internal/blogs/deleteBlog/${id}`);
             setBlogs(blogs.filter(blog => blog.id !== id));
         } catch (error) {
             console.error("Error deleting blog:", error);
