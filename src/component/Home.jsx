@@ -28,7 +28,7 @@ function Home() {
             </button>
 
             {/* BlogList Component */}
-            <div className="w-full lg:w-4/5 mt-10">
+            <div className="w-full lg:w-11/12 mt-10">
                 <BlogList />
             </div>
         </div>
