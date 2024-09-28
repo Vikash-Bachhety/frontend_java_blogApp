@@ -12,7 +12,6 @@ function Update() {
     views: '',
   });
 
-  // Fetch the existing blog data on component mount
   useEffect(() => {
     const fetchBlog = async () => {
       try {

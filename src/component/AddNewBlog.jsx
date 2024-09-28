@@ -20,7 +20,6 @@ function AddNewBlog() {
     });
   };
 
-  // Handle the update action
   const handleSubmit = async () => {
     try {
       await axios.post(`https://backendjavablogapp-production.up.railway.app/blogs/addBlog`, form);
