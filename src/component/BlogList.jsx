@@ -30,8 +30,6 @@ const BlogList = () => {
   };
 
   const handleEdit = (id) => {
-    // This function is passed down to the Blog component, 
-    // which handles the navigation and edit logic.
   };
 
   return (
