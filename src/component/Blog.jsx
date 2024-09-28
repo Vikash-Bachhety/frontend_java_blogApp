@@ -10,7 +10,7 @@ const Blog = ({ id, title, description, views, imageurl, handleDelete }) => {
   };
 
   return (
-    <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden my-4">
+    <div className="max-w-sm w-80 bg-white shadow-lg rounded-lg overflow-hidden my-4">
       <div className="p-3">
         <img className='w-full h-52 object-cover border border-slate-400' src={imageurl} alt="" />
         <h2 className="text-xl text-teal-700 font-semibold my-2 truncate">{title}</h2>
