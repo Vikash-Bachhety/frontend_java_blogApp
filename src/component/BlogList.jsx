@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import Blog from './Blog.jsx';
 import axios from 'axios';
-import DeleteIcon from '@mui/icons-material/Delete';
+import {DeleteIcon, PencilAltIcon} from '@mui/icons-material/Delete';
 
 const BlogList = () => {
     const [blogs, setBlogs] = useState([]);
@@ -29,6 +29,10 @@ const BlogList = () => {
             console.error("Error deleting blog:", error);
         }
     };
+
+    const handleEdit = (id) => {
+        navigate(`/update/${id}`);
+      };
 
     return (
         <div className="blog-list flex flex-wrap justify-center gap-8 mt-8 w-full">
