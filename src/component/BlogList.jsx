@@ -9,7 +9,7 @@ const BlogList = () => {
     const fetchBlogs = async () => {
       try {
         const response = await axios.get("https://backendjavablogapp-production.up.railway.app/blogs/");
-        const data = response.data;
+        const data = response.data.reverse();
         console.log(data);
         setBlogs(data);
       } catch (error) {
