@@ -27,13 +27,13 @@ const Blog = ({ id, title, description, views, imageurl, handleDelete }) => {
         </button>
 
         {/* Delete Button with Trash Icon */}
-        {/* <button 
+        <button 
           onClick={() => handleDelete(id)} 
           className='flex items-center text-md text-rose-500 hover:bg-rose-600 hover:text-white rounded-md px-3 py-1 transition duration-300'
         >
           <TrashIcon className="w-5 h-5 mr-2" />
           Delete
-        </button> */}
+        </button>
       </div>
     </div>
   );
