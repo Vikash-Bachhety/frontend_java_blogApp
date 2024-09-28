@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
+import { PencilAltIcon, TrashIcon } from '@heroicons/react/solid';
 
 const Blog = ({ id, title, description, views, imageurl, handleDelete }) => {
   const navigate = useNavigate();
@@ -10,31 +9,30 @@ const Blog = ({ id, title, description, views, imageurl, handleDelete }) => {
   };
 
   return (
-    <div className="max-w-sm w-96 bg-white shadow-lg rounded-lg overflow-hidden my-6 transition transform hover:scale-105 duration-300">
-      {/* Blog Image */}
-      <img className="w-full h-52 object-cover" src={imageurl} alt={title} />
-      
-      {/* Blog Content */}
-      <div className="px-6 py-4">
-        <h2 className="text-2xl text-teal-700 font-bold mb-2 truncate">{title}</h2>
+    <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden my-4">
+      <div className="px-6 py-3">
+        <img className='w-full h-52 object-cover' src={imageurl} alt="" />
+        <h2 className="text-xl text-teal-700 font-semibold my-2 truncate">{title}</h2>
         <p className="text-gray-700 text-base mb-4 line-clamp-4">{description}</p>
         <span className="text-rose-700 text-sm font-semibold">Views: {views}</span>
       </div>
-      
-      {/* Action Buttons */}
-      <div className="flex justify-between items-center px-6 pb-4">
-        <button
-          onClick={() => handleEdit(id)}
-          className="flex items-center gap-2 text-blue-500 hover:bg-blue-500 hover:text-white px-3 py-1 rounded transition-colors duration-300"
+      <div className='flex justify-between w-full pb-2 px-4'>
+        {/* Edit Button with Pencil Icon */}
+        <button 
+          onClick={() => handleEdit(id)} 
+          className='flex items-center text-md text-blue-500 hover:bg-blue-600 hover:text-white rounded-md px-3 py-1 transition duration-300'
         >
-          <EditIcon /> Edit
+          <PencilAltIcon className="w-5 h-5 mr-2" />
+          Edit
         </button>
 
-        <button
-          onClick={() => handleDelete(id)}
-          className="flex items-center gap-2 text-rose-500 hover:bg-rose-500 hover:text-white px-3 py-1 rounded transition-colors duration-300"
+        {/* Delete Button with Trash Icon */}
+        <button 
+          onClick={() => handleDelete(id)} 
+          className='flex items-center text-md text-rose-500 hover:bg-rose-600 hover:text-white rounded-md px-3 py-1 transition duration-300'
         >
-          <DeleteIcon /> Delete
+          <TrashIcon className="w-5 h-5 mr-2" />
+          Delete
         </button>
       </div>
     </div>
