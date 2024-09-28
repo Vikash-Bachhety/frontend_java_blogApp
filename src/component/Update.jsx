@@ -38,7 +38,7 @@ function Update() {
   // Handle the update action
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:9000/blogs/updateBlog/${id}`, form);
+      await axios.put(`https://backend_java_blogapp.railway.internal/blogs/updateBlog/${id}`, form);
       navigate("/"); 
     } catch (error) {
       console.error("Error updating blog:", error);
