@@ -8,7 +8,7 @@ const BlogList = () => {
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                const response = await axios.get("http://localhost:9000/blogs/");
+                const response = await axios.get("https://backend_java_blogapp.railway.internal/blogs/");
                 const data = response.data;
                 console.log(data);
                 setBlogs(data);
