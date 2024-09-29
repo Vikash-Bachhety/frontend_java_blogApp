@@ -33,7 +33,7 @@ const BlogList = () => {
   };
 
   return (
-    <div className="blog-list flex flex-wrap justify-center gap-8 w-full">
+    <div className="blog-list flex flex-wrap justify-center gap-10 w-full">
       {blogs.map((blog) => (
         <Blog
           key={blog.id}

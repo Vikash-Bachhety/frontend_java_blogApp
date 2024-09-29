@@ -11,7 +11,7 @@ function Home() {
     };
 
     return (
-        <div className='bg-slate-900 flex flex-col w-full min-h-screen justify-center items-center pt-10 px-6 lg:px-8'>
+        <div className='bg-slate-900 flex flex-col w-full min-h-screen justify-center items-center pt-10 px-2 lg:px-8'>
             <h1 className="w-full lg:w-4/5 text-5xl lg:text-6xl text-teal-300 font-bold text-center mb-8 tracking-wide">
                 Blog's Collection
             </h1>
